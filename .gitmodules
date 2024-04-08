@@ -1,0 +1,4 @@
+[submodule "userpatches"]
+	path = userpatches
+	url = https://github.com/silver2row/armbian-userpatches-example-BeagleV-Ahead.git
+	branch = main
