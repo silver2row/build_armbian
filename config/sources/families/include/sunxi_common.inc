@@ -19,20 +19,24 @@ declare -g UBOOT_FW_ENV='0x88000,0x20000' # /etc/fw_env.config offset and env si
 declare -g ASOUND_STATE='asound.state.sunxi-next'
 declare -g GOVERNOR=ondemand
 
+# shellcheck source=config/sources/families/include/crust_firmware.inc
 source "${BASH_SOURCE%/*}/crust_firmware.inc"
 
 case $BRANCH in
 
 	legacy)
 		declare -g KERNEL_MAJOR_MINOR="6.1" # Major and minor versions of this kernel.
+		declare -g KERNELBRANCH="tag:v6.1.104"
 		;;
 
 	current)
 		declare -g KERNEL_MAJOR_MINOR="6.6" # Major and minor versions of this kernel.
+		declare -g KERNELBRANCH="tag:v6.6.44"
 		;;
 
 	edge)
-		declare -g KERNEL_MAJOR_MINOR="6.7" # Major and minor versions of this kernel.
+		declare -g KERNEL_MAJOR_MINOR="6.10" # Major and minor versions of this kernel.
+		declare -g KERNELBRANCH="tag:v6.10.9"
 		;;
 esac
 
